@@ -1,6 +1,12 @@
 ########################################################  base  ########################################################
 server:
-  port: 20002
+  port: 10001
+
+#######################################################  ribbon  #######################################################
+#请求超时设置
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
 
 #######################################################  nacos  ########################################################
 nacos:
@@ -16,11 +22,12 @@ spring:
       discovery:
         server-addr: ${nacos.node.address.one},${nacos.node.address.two},${nacos.node.address.three}
 
-#######################################################  ribbon  #######################################################
-#请求超时设置
-ribbon:
-  ReadTimeout: 60000
-  ConnectTimeout: 60000
-
 #########################################################  db  #########################################################
+  #配置数据库
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/test?setUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: Rl123456
 #######################################################  redis  ########################################################
