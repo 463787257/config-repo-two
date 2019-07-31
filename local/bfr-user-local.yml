@@ -36,4 +36,4 @@ spring:
 bfr:
   refresh:
     test:
-      name: 测试测试而已===5
+      name: 测试测试而已===6
